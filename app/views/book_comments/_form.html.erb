@@ -1,0 +1,6 @@
+<%= form_with(model:[book, book_comment], remote: true) do |f| %>
+       <%= f.text_area :comment, size: "75x5" %>
+        <div class="form-group">
+            <%= f.submit "送信", class: 'btn btn-secondary' %>
+        </div>
+<% end %>
