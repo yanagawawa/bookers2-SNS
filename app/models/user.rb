@@ -24,6 +24,9 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
+  has_many :user_rooms
+  has_many :chats
+  has_many :rooms, through: :user_rooms
   
   attachment :profile_image, destroy: false
 
