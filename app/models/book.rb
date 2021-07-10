@@ -11,6 +11,7 @@ class Book < ApplicationRecord
       Book.joins(:favorites).where(favorits: { created_at:　0.days.ago.prev_week..0.days.ago.prev_week(:sunday)}).group(:id).order("count(*) desc")
     end
   has_many :favorited_users, through: :favorites, source: :user
+  has_many :categories, dependent: :destroy
 
 
 
