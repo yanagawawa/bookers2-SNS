@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  
+
+  get 'categories/index'
+  get 'categories/edit'
   get 'chats/show'
   root to: 'homes#top'
   devise_for :users
   get 'home/about' => 'homes#about'
   get 'search/search' => 'search#search'
+  resources :categories, except: [:new, :show]
   resources :users,only: [:show,:index,:edit,:update] do
    resource :relationships, only: [:create, :destroy]
    get 'followings' => 'relationships#followings', as: 'followings'
@@ -16,5 +19,5 @@ Rails.application.routes.draw do
    resource :favorites, only: [:create, :destroy]
    resources :book_comments, only: [:create, :destroy]
   end
-  
+
 end
