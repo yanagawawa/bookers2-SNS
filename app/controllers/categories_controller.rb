@@ -32,6 +32,7 @@ class CategoriesController < ApplicationController
     redirect_to categories_path
   end
 
+# ストロングパラメーター
   private
 
     def set_category
