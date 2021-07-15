@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  # デバイスを利用するときに、emailの受け渡しを許可する
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
